@@ -1,0 +1,60 @@
+@import "~material-design-icons/iconfont/material-icons.css";
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+#container{
+    padding: 20px 38px; //vai ficar alinhada com o menu e o restante da página
+}
+
+.mat-table{
+    width: 100%; //Almentear a largura da tabela
+
+}
+/* Ocultando por padrão os botões das tabelas de dados */
+.mat-row{
+
+    .mat-raised-button {
+        visibility: hidden;
+    }
+
+    &:hover{
+        filter: brightness(110%); // dar uma diferença na linhar 
+        .mat-raised-button {
+            visibility: visible;
+        }
+    }
+}
+
+.new-item-button-container{
+    margin-bottom: 20px;
+    text-align: right; //Jogar o botton adicionar fornecedor a direita
+
+    .mat-raised-button{
+        font-size: 120%; //!important; toda vez que uma regra importante não for
+        // utilizada usa se !importante para força a barra
+    }
+}
+
+.std-form{
+    max-width: 80%;
+    margin: 0 auto;
+
+    mat-form-field{
+        min-width: 150px;
+        max-width: 450px;
+        width: 100%;
+        margin-right: 30px;
+    }
+}
+
+.form-buttons{
+    background: transparent;
+
+    mat-toolbar-row {
+        display: flex;
+        justify-content: space-around;
+    }
+}
+
