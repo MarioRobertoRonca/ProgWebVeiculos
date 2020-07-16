@@ -2,6 +2,10 @@
     <mat-icon aria-hidden="false" aria-label="Menu principal"> menu </mat-icon>
 </button>
 <mat-menu #menu="matMenu">
-  <button mat-menu-item>Item 1</button>
-  <button mat-menu-item>Item 2</button>
+  <a [routerLink]="['/anuncio']" mat-menu-item>Anúncio</a>
+  <a [routerLink]="['/endereco']" mat-menu-item>Endereço</a>
+  <a [routerLink]="['/usuario']" mat-menu-item>Usuário</a>
+  <a [routerLink]="['/veiculo']" mat-menu-item>Veículo</a>
 </mat-menu>
+
+

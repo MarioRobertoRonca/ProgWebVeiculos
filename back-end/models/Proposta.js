@@ -20,7 +20,6 @@ const esquema = mongoose.Schema({
     },
     createdAt: {
         type: Date,
-        required: true,
     },
     forma_pagamento: {
         type: String,
@@ -37,7 +36,7 @@ const esquema = mongoose.Schema({
         type: String,
         required: true
     }
-})
+}, {timestamps:true})
 
 /*
    Parâmetros do método mongoose.model()

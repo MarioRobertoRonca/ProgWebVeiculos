@@ -8,8 +8,7 @@ const esquema = mongoose.Schema({
        index: {unique: true}
    },
    foto: {
-       type: String,
-       required: true
+       type: String
    },
    preco_tabela: {
        type: String
@@ -21,8 +20,7 @@ const esquema = mongoose.Schema({
        type: String
    },
    preco_anuncio:{
-       type: String,
-       required: true
+       type: Number
    },
    vendido: {
        type: Boolean,
@@ -30,14 +28,12 @@ const esquema = mongoose.Schema({
        required: true
    },
    createdAt: {
-       type: Date,
-       required:true
+       type: Date
    },
    validade: {
-       type: Date,
-       required: true
+       type: Date
    }
-})
+}, {timestamps:true})
 
 /*
    Parâmetros do método mongoose.model()

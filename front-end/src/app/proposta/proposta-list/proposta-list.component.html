@@ -1,0 +1,31 @@
+<h1>Listagem de propostas</h1>
+
+<div class="new-item-button-container">
+    <a mat-raised-button color="accent" [routerLink]="['/proposta/novo']">
+      <mat-icon> add_box</mat-icon> Cadastrar nova proposta
+    </a>
+</div>
+<table mat-table [dataSource]="propostas" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    
+    
+    <!-- excluir Symbol Column -->
+    <ng-container matColumnDef="excluir">
+      <th mat-header-cell *matHeaderCellDef> Excluir </th>
+      <td mat-cell *matCellDef="let proposta">
+        <button mat-raised-button color= 'warn' title="Exluir"
+        (click)= "excluirItem(proposta._id)">
+        <mat-icon>delete_forever</mat-icon>
+        ></button>
+      </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let proposta; columns: displayedColumns;"></tr>
+  </table>
+  
+  

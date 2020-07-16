@@ -1,0 +1,90 @@
+<h1>Listagem de veículos</h1>
+
+<div class="new-item-button-container">
+    <a mat-raised-button color="accent" [routerLink]="['/veiculo/novo']">
+      <mat-icon> add_box</mat-icon> Cadastrar novo veiculo
+    </a>
+</div>
+<table mat-table [dataSource]="veiculos" class="mat-elevation-z8">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!-- Position Column -->
+    <ng-container matColumnDef="dono">
+      <th mat-header-cell *matHeaderCellDef> Dono </th>
+      <td mat-cell *matCellDef="let veiculo"> {{veiculo.codUsuario?.userName}} </td>
+    </ng-container>
+
+    <!-- cliente Name Column -->
+    <ng-container matColumnDef="marca">
+      <th mat-header-cell *matHeaderCellDef> Marca </th>
+      <td mat-cell *matCellDef="let veiculo"> {{veiculo.marca}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="modelo">
+      <th mat-header-cell *matHeaderCellDef> Modelo </th>
+      <td mat-cell *matCellDef="let veiculo"> {{veiculo.modelo}} </td>
+    </ng-container>
+  
+    <!-- data-veiculo Weight Column -->
+    <ng-container matColumnDef="anoFabri">
+      <th mat-header-cell *matHeaderCellDef> Ano Fabricação </th>
+      <td mat-cell *matCellDef="let veiculo"> {{veiculo.anoFabri}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="anoModelo">
+      <th mat-header-cell *matHeaderCellDef> Ano Modelo </th>
+      <td mat-cell *matCellDef="let veiculo"> {{veiculo.anoModelo}} </td>
+    </ng-container>
+
+  
+    <!-- forma_de_pagamento Column -->
+    <ng-container matColumnDef="renavam">
+      <th mat-header-cell *matHeaderCellDef> Renavam </th>
+      <td mat-cell *matCellDef="let veiculo"> {{veiculo.renavam}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="placa">
+      <th mat-header-cell *matHeaderCellDef> Placa </th>
+      <td mat-cell *matCellDef="let veiculo"> {{veiculo.placa}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="cor">
+      <th mat-header-cell *matHeaderCellDef> Cor </th>
+      <td mat-cell *matCellDef="let veiculo"> {{veiculo.cor}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="cidade">
+      <th mat-header-cell *matHeaderCellDef> Cidade </th>
+      <td mat-cell *matCellDef="let veiculo"> {{veiculo.cidade}} </td>
+    </ng-container>
+
+
+    <!-- editar Symbol Column -->
+    <ng-container matColumnDef="editar">
+      <th mat-header-cell *matHeaderCellDef> Editar </th>
+      <td mat-cell *matCellDef="let veiculo">
+        <a mat-raised-button color="accent" title="Editar"
+          [routerLink]="['/veiculo', veiculo._id]">
+          <mat-icon>edit</mat-icon>
+        </a>
+      </td>
+    </ng-container>
+    
+    <!-- excluir Symbol Column -->
+    <ng-container matColumnDef="excluir">
+      <th mat-header-cell *matHeaderCellDef> Excluir </th>
+      <td mat-cell *matCellDef="let veiculo">
+        <button mat-raised-button color= 'warn' title="Exluir"
+        (click)= "excluirItem(veiculo._id)">
+        <mat-icon>delete_forever</mat-icon>
+        ></button>
+      </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let veiculo; columns: displayedColumns;"></tr>
+  </table>
+  
+  

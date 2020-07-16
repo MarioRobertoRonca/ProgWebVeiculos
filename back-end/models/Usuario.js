@@ -27,8 +27,7 @@ const esquema = mongoose.Schema({
         index: {unique: true}
     },
     createdAt: {
-        type: Date,
-        required: true
+        type: Date
     },
     avaliacoes: {
         type: Object
@@ -38,7 +37,9 @@ const esquema = mongoose.Schema({
         ref:'Endereco',//nome do modo referênciado
         require:true
     }
-})
+}, {timestamps:true})
+
+
 
 /*
    Parâmetros do método mongoose.model()

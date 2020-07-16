@@ -1,0 +1,96 @@
+<h1>Listagem de anúncios</h1>
+
+<div class="new-item-button-container">
+  <a mat-raised-button color="accent" [routerLink]="['/anuncio/novo']">
+    <mat-icon> add_box</mat-icon> Cadastrar novo anúncio
+  </a>
+</div>
+
+<table mat-table [dataSource]="anuncios" class="mat-elevation-z8">
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+  
+    <!--  marca Column--> 
+    <ng-container matColumnDef="marca">
+      <th mat-header-cell *matHeaderCellDef> Marca </th>
+      <td mat-cell *matCellDef="let anuncio"> {{anuncio.codVeiculo?.marca}} </td>
+    </ng-container>
+    
+    
+    
+    
+    <!-- modelo Weight Column -->
+    <ng-container matColumnDef="modelo">
+      <th mat-header-cell *matHeaderCellDef> Modelo </th>
+      <td mat-cell *matCellDef="let anuncio"> {{anuncio.codVeiculo?.modelo}} </td>
+    </ng-container>
+
+  
+    <!-- cor Column -->
+    <ng-container matColumnDef="cor">
+      <th mat-header-cell *matHeaderCellDef> Cor </th>
+      <td mat-cell *matCellDef="let anuncio"> {{anuncio.codVeiculo?.cor}} </td>
+    </ng-container>
+
+    <!-- userName Column -->
+    <ng-container matColumnDef="userName">
+      <th mat-header-cell *matHeaderCellDef> Nome </th>
+      <td mat-cell *matCellDef="let anuncio"> {{anuncio.codVeiculo?.codUsuario?.userName}} </td>
+    </ng-container>
+
+    <!-- email Column -->
+    <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> E-mail </th>
+        <td mat-cell *matCellDef="let anuncio"> {{anuncio.codVeiculo?.codUsuario?.email}} </td>
+      </ng-container>
+
+      <!-- fone Column -->
+    <ng-container matColumnDef="fone">
+        <th mat-header-cell *matHeaderCellDef> fone </th>
+        <td mat-cell *matCellDef="let anuncio"> {{anuncio.codVeiculo?.codUsuario?.telefone}} </td>
+      </ng-container>
+
+      <!-- cidade Column -->
+      <ng-container matColumnDef="cidade">
+        <th mat-header-cell *matHeaderCellDef> Cidade </th>
+        <td mat-cell *matCellDef="let anuncio"> {{anuncio.codVeiculo?.codUsuario?.endereco?.cidade}} </td>
+      </ng-container>
+
+        <!-- preco Column -->
+    <ng-container matColumnDef="preco">
+        <th mat-header-cell *matHeaderCellDef> Preço </th>
+        <td mat-cell *matCellDef="let anuncio"> ({{anuncio.preco_anuncio}}) </td>
+      </ng-container>
+    
+      <!-- createdAt Column -->
+      <ng-container matColumnDef="createdAt">
+        <th mat-header-cell *matHeaderCellDef> Data poste </th>
+        <td mat-cell *matCellDef="let anuncio"> {{anuncio.createdAt | date:'dd/MM/yyyy' }} </td>
+      </ng-container>
+
+    <!-- editar Symbol Column -->
+    <ng-container matColumnDef="editar">
+      <th mat-header-cell *matHeaderCellDef> Editar </th>
+      <td mat-cell *matCellDef="let anuncio">
+        <a mat-raised-button color="accent" title="Editar"
+          [routerLink]="['/anuncio', anuncio._id]">
+          <mat-icon>edit</mat-icon>
+        </a>
+      </td>
+    </ng-container>
+    
+    <!-- excluir Symbol Column -->
+    <ng-container matColumnDef="excluir">
+      <th mat-header-cell *matHeaderCellDef> Excluir </th>
+      <td mat-cell *matCellDef="let anuncio">
+        <button mat-raised-button color= 'warn' title="Exluir"
+        (click)= "excluirItem(anuncio._id)">
+        <mat-icon>delete_forever</mat-icon>
+        ></button>
+      </td>
+    </ng-container>
+  
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let anuncio; columns: displayedColumns;"></tr>
+  </table>
+

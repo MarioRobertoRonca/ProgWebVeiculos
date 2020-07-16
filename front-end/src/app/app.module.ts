@@ -14,6 +14,15 @@ import { ConfirmDlgComponent } from './ui/confirm-dlg/confirm-dlg.component';
 import { EnderecoFormComponent } from './endereco/endereco-form/endereco-form.component';
 import { FormsModule } from '@angular/forms';
 import { NgxMaskModule} from 'ngx-mask';
+import { AnuncioListComponent } from './anuncio/anuncio-list/anuncio-list.component';
+import { AnuncioFormComponent } from './anuncio/anuncio-form/anuncio-form.component';
+import { UsuarioListComponent } from './usuario/usuario-list/usuario-list.component';
+import { UsuarioFormComponent } from './usuario/usuario-form/usuario-form.component';
+import { UsuarioPerfilComponent } from './usuario/usuario-perfil/usuario-perfil.component';
+import { VeiculoListComponent } from './veiculo/veiculo-list/veiculo-list.component';
+import { VeiculoFormComponent } from './veiculo/veiculo-form/veiculo-form.component';
+import { PropostaListComponent } from './proposta/proposta-list/proposta-list.component';
+import { PropostaFormComponent } from './proposta/proposta-form/proposta-form.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +32,16 @@ import { NgxMaskModule} from 'ngx-mask';
     MainFooterComponent,
     EnderecoListComponent,
     ConfirmDlgComponent,
-    EnderecoFormComponent
+    EnderecoFormComponent,
+    AnuncioListComponent,
+    AnuncioFormComponent,
+    UsuarioListComponent,
+    UsuarioFormComponent,
+    UsuarioPerfilComponent,
+    VeiculoListComponent,
+    VeiculoFormComponent,
+    PropostaListComponent,
+    PropostaFormComponent
   ],
   imports: [
     BrowserModule,
